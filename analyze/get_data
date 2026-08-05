@@ -1,0 +1,35 @@
+#!/bin/bash
+set -eo pipefail
+
+# ============================
+# loading helper scripts
+# ============================
+
+CURRENT_DIR="$PWD"
+HELPER="/home/av256/scripts/shared/bash"
+BASE="/home/av256/scripts/analyze"
+source "$HELPER/colors.sh"
+source "$BASE/main/common.sh"
+source "$BASE/main/help.sh"
+source "$BASE/main/dispatcher.sh"
+source "$BASE/main/commands/commands.sh"
+source "$BASE/main/main.sh"
+
+# ============================
+# executing scripts
+# ============================
+
+dispatch "$@"
+rc=$?
+case $rc in
+	0)
+		;;
+	2)
+		exit 0
+		;;
+	*)
+		die "Problem with dispatcher"
+		;;
+esac
+main || die "Problem with main"
+exit 0

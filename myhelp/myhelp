@@ -1,0 +1,20 @@
+#!/bin/bash
+
+sep="=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+
+# print message
+echo "$sep"
+echo "=-=                     My Programs                     =-="
+echo "$sep"
+echo "Commands:"
+echo "  send_inp              sends automatically jobs from folder"
+echo "                        with only one .inp file"
+echo "    -h, --help          to see all features"
+echo ""
+echo "  get_data              analyze thermodynamics and summarize"
+echo "                        results in an excel sheet"
+echo "    -h, --help          to see all features"
+echo ""
+echo "$sep"
+echo "  myhelp                to see this help message"
+echo ""

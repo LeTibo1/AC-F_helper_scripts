@@ -1,0 +1,29 @@
+#!/bin/bash
+set -eo pipefail
+
+# ============================
+# loading helper scripts
+# ============================
+
+CURRENT_DIR="$PWD"
+HELPER="/home/av256/scripts/shared"
+BASE="/home/av256/scripts/send_jobs"
+source "$HELPER/bash/colors.sh"
+source "$BASE/config/calc_setting.sh"
+source "$BASE/config/input_setting.sh"
+source "$BASE/main/common.sh"
+source "$BASE/main/help.sh"
+source "$BASE/main/dispatcher.sh"
+source "$BASE/main/main.sh"
+source "$BASE/main/commands/sends.sh"
+source "$BASE/main/commands/prints.sh"
+source "$BASE/main/commands/creates.sh"
+source "$BASE/main/commands/log.sh"
+source "$BASE/main/commands/info.sh"
+
+# ============================
+# executing scripts
+# ============================
+
+dispatch "$@"
+exit $?

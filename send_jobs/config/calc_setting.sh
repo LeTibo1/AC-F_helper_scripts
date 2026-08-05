@@ -1,0 +1,24 @@
+#!/bin/bash
+
+VERSION="6.1.1"
+
+# gg-cluster
+GGWT="0-12:00:00"
+GGRAM=6000
+GGCORES=12
+
+# justus
+JWT="2-12:00:00"
+JRAM=6000
+JCORES=24
+
+# goat
+GWT="3-00:00:00"
+GRAM=500
+GCORES=36
+
+# nbo
+NWT="180"
+NRAM=8000
+NCORES=1
+NVERSION="7.0.10_i8"

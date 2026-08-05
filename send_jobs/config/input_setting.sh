@@ -1,0 +1,38 @@
+#!/bin/bash
+
+CHARGE=0
+MULT=1
+IS_INPUT_SOLVENT=false
+
+# sp calculation
+FUNCTIONAL_SP="wB97X-V"
+BASISSET_SP="def2-TZVPP"
+INPUT_LINE_SP=(
+	"!" "$FUNCTIONAL_SP" "$BASISSET_SP" "RIJCOSX" "AutoAux" "VeryTightSCF"
+)
+
+# opt calculation
+FUNCTIONAL_OPT="PBEh-3c"
+BASISSET_OPT=""
+INPUT_LINE_OPT=(
+	"!" "$FUNCTIONAL_OPT" "$BASISSET_OPT" "RIJCOSX" "AutoAux" "VeryTightSCF" \
+	"XYZfile" "DefGrid3" "OPT" "FREQ"
+)
+INPUT_LINE_TIGHTOPT=(
+	"!" "$FUNCTIONAL_OPT" "$BASISSET_OPT" "RIJCOSX" "AutoAux" "VeryTightSCF" \
+	"XYZfile" "DefGrid3" "TightOpt" "FREQ"
+)
+INPUT_LINE_VERYTIGHTOPT=(
+	"!" "$FUNCTIONAL_OPT" "$BASISSET_OPT" "RIJCOSX" "AutoAux" "VeryTightSCF" \
+	"XYZfile" "DefGrid3" "VeryTightOpt" "FREQ"
+)
+
+# goat calculation
+FUNCTIONAL_GOAT="XTB2"
+BASISSET_GOAT=""
+INPUT_LINE_GOAT=("!" "$FUNCTIONAL_GOAT" "$BASISSET_GOAT" "GOAT")
+
+# nbo calculation
+FUNCTIONAL_NBO="PBE0 D4"
+BASISSET_NBO="def2-TZVPP"
+INPUT_LINE_NBO=("!" "$FUNCTIONAL_NBO" "$BASISSET_NBO" "NBO" "VeryTightSCF")
