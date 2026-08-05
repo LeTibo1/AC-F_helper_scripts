@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CURRENT_DIR="$PWD"
-SCRIPT_PATH="$HOME/Documents/Wichtig/Uni/Master_Forschis/Greb/scripts/local"
+SCRIPT_PATH=$(dirname "$0")
 
 if [[ "$CURRENT_DIR" != *opt ]]; then
 	echo "You need to operate from an /opt directory"
