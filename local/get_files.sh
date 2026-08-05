@@ -11,6 +11,7 @@ fi
 
 files=()
 while IFS= read -r f; do
+	grep -q "\*\*\*imaginary mode\*\*\*" "$f" && continue
 	files+=("$f")
 done < <(find . -name "*.out" ! -name "slurm*" ! -name "*atom_*")
 
