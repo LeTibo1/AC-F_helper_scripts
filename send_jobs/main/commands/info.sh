@@ -96,7 +96,7 @@ convert_time() {
 		hs="$a"; ms="$b"; ss="$c"
 	elif [[ -n "$b" ]]; then
 		hs="$a"; ms="$b"
-	elif [[ -n "$c" ]]; then
+	elif [[ -n "$a" ]]; then
 		hs="$a"
 	elif [[ -n "$time" ]]; then
 		hs=$(( time / 60))
